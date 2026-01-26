@@ -85,3 +85,4 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     git commit --allow-empty -m "$EMOJI Start $PREFIX: $NAME"
     echo "✅ Initial commit created"
 fi
+
