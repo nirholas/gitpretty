@@ -128,3 +128,4 @@ echo -e "  ${GRAY}Showing $LIMIT commits${NC}"
 echo ""
 
 
+
