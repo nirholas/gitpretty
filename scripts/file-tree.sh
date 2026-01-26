@@ -221,3 +221,4 @@ echo -e "${GRAY}$TOTAL_DIRS directories, $TOTAL_FILES files${NC}"
 echo ""
 
 
+
