@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # emoji-file-commits.sh - Add unique emoji commits that show in GitHub file browser
-# Each file gets touched and committed with a unique emoji
+# Each file gets a tiny modification (trailing newline) and committed with unique emoji
 # This makes emojis visible in GitHub's file listing view
 
 set -e
@@ -13,6 +13,8 @@ if [ -z "$REPO_PATH" ]; then
     echo ""
     echo "This script commits each file with a unique emoji that shows"
     echo "in GitHub's file browser next to each filename."
+    echo ""
+    echo "Note: Adds a trailing newline to each file to register a change."
     exit 1
 fi
 
@@ -95,8 +97,8 @@ if [ "$FILE_COUNT" -gt "$EMOJI_COUNT" ]; then
     echo ""
 fi
 
-echo "🎯 Creating commits (each file will be touched)..."
-echo "=================================================="
+echo "🎯 Creating commits (each file will be modified)..."
+echo "===================================================="
 echo ""
 
 INDEX=0
@@ -108,12 +110,12 @@ while IFS= read -r file; do
     EMOJI="${EMOJIS[$INDEX % $EMOJI_COUNT]}"
     FILENAME=$(basename "$file")
     
-    # Touch the file to update its timestamp
-    touch "$file"
+    # Add a newline to the file to register a change
+    echo "" >> "$file"
     
     # Stage and commit
     git add "$file"
-    git commit -m "$EMOJI $FILENAME" --quiet
+    git commit -m "$EMOJI $FILENAME" --quiet 2>/dev/null || true
     
     printf "[%d/%d] %s %s\n" "$((INDEX + 1))" "$FILE_COUNT" "$EMOJI" "$file"
     
@@ -124,4 +126,5 @@ echo ""
 echo "✅ SUCCESS! $INDEX emoji commits created."
 echo ""
 echo "Each file now has a unique emoji in GitHub's file browser!"
+echo "Push with: git push origin main"
 echo ""
