@@ -1,171 +1,141 @@
-# Aesthetics - Full LLM Context
+# gitpretty - Complete Reference
 
-> Beautiful CLI tools for developers who appreciate visual polish
+> Make your git history beautiful
 
-## Project Overview
+## Overview
 
-Aesthetics is a comprehensive toolkit of shell scripts designed to make development workflows more visually appealing. The scripts focus on emoji-based git workflows, repository visualization, and developer experience enhancements.
+gitpretty is a toolkit of bash scripts and GitHub Actions that transform plain git workflows into visually appealing, emoji-enhanced experiences.
 
-## Repository Structure
-
-```
-aesthetics/
-├── emoji-commits.sh      # Main emoji commit script (609 unique emojis)
-├── scripts/
-│   ├── repo-stats.sh     # Repository statistics with visual charts
-│   ├── git-beautify.sh   # Beautified git log output
-│   ├── file-tree.sh      # Enhanced tree view with icons
-│   ├── commit-lint.sh    # Emoji commit linting
-│   └── changelog-gen.sh  # Changelog generation from emoji commits
-├── docs/
-│   ├── EMOJI_GUIDE.md    # Complete emoji reference
-│   ├── SAFETY.md         # Safety features documentation
-│   └── EXAMPLES.md       # Usage examples
-├── README.md             # Main documentation
-├── AGENTS.md             # AI agent instructions
-├── SKILL.md              # Skill definition for AI
-├── CONTRIBUTING.md       # Contribution guidelines
-├── llms.txt              # Short LLM context
-└── llms-full.txt         # This file - full context
-```
-
-## Core Script: emoji-commits.sh
-
-### Purpose
-Creates individual git commits for every file in a repository, each with a unique emoji. Uses `--allow-empty` commits to ensure zero file modifications.
-
-### Features
-- 609 unique tech/builder/geometric emojis
-- SHA256 checksum verification before and after
-- File manifest comparison
-- Detailed logging and verification reports
-- No faces, no rainbows - clean tech aesthetic
-
-### Emoji Categories (609 total)
-
-1. **Stars & Sparkles (7)**: ⭐ 🌟 ✨ 💫 🌠 🔆 🔅
-2. **Tech & Tools (30)**: 🚀 🛠️ ⚙️ 🔧 🔩 ⛏️ 🔨 🪛 🪚 🔗 ⛓️ 🧰 🔌 💡 🔋 💻 🖥️ ⌨️ 🖱️ 💾 💿 📀 🧮 📱 📡 🔭 🔬 🧪 🧬 ⚗️
-3. **Geometric Shapes (33)**: 💎 🔷 🔶 🔹 🔸 🔺 🔻 💠 🔘 ⚪ 🟣 🔵 🟢 🟡 🟠 🔴 ⬛ ⬜ 🟦 🟩 🟨 🟧 🟥 🟪 🟫 ◼️ ◻️ ◾ ◽ ▪️ ▫️ 🔳 🔲
-4. **Nature Elements (30)**: 🌱 🌿 🍀 ☘️ 🌲 🌳 🌴 🪴 🌵 🌾 🌸 🌺 🌻 🌼 🌷 🪻 🪷 🌹 💐 🪨 🪵 🍃 🍂 🍁 🌊 💧 🔥 ❄️ ⚡ 🌀
-5. **Space & Cosmic (17)**: 🌍 🌎 🌏 🌐 🪐 🌙 🌕 🌖 🌗 🌘 🌑 🌒 🌓 🌔 ☄️ 💥 🌌
-6. **Buildings (35)**: 🏗️ 🏛️ 🏰 🏯 🗼 🗽 🏠 🏡 🏢 🏦 🏭 🏪 🏫 🏥 🏨 🏩 ⛪ 🕌 🛕 🕍 ⛩️ 🕋 ⛲ ⛺ 🌁 🌃 🌄 🌅 🌆 🌇 🌉 🎡 🎢 🎠 ⛱️
-7. **Vehicles (56)**: Full transport emoji set
-8. **Office & Documents (56)**: Full office/document emoji set
-9. **Books & Media (37)**: Full media emoji set
-10. **Art & Music (26)**: Full art/music emoji set
-11. **Games & Sports (51)**: Full games/sports emoji set
-12. **Celebration (14)**: 🎀 🎁 🎈 🎉 🎊 🎋 🎍 🎎 🎏 🎐 🎑 🧧 🎄 🎃
-13. **Hearts (19)**: Full hearts emoji set
-14. **Symbols (78+)**: Arrows, zodiac, math symbols, etc.
-
-### Safety Guarantees
-
-1. **Pre-commit Verification**
-   - Creates complete file manifest
-   - Computes SHA256 checksums for all files
-   - Stores in temporary tracking directory
-
-2. **Commit Process**
-   - Uses `git commit --allow-empty` (no staging, no modifications)
-   - Each file gets unique emoji in commit message
-   - Format: `<emoji> <filename>`
-
-3. **Post-commit Verification**
-   - Regenerates file manifest
-   - Recomputes all checksums
-   - Compares before/after
-   - Reports any discrepancies
-
-### Usage
+## Installation
 
 ```bash
-./emoji-commits.sh /path/to/repository
+git clone https://github.com/nirholas/gitpretty.git ~/.gitpretty
+chmod +x ~/.gitpretty/*.sh ~/.gitpretty/scripts/*.sh
 ```
 
-### Output Example
+## Core Scripts
 
-```
-Working in: /path/to/repo
-Repository: my-repo
-
-📊 PRE-COMMIT STATUS
-====================
-Total files: 150
-Creating checksums...
-Checksums created: 150
-
-🎯 CREATING COMMITS
-===================
-[1/150] ⭐ src/index.ts
-[2/150] 🌟 src/utils.ts
-...
-[150/150] 🔷 README.md
-
-✅ VERIFICATION
-===============
-Files before: 150
-Files after: 150
-Checksum verification: PASSED
-No files modified, added, or deleted.
-
-🎉 SUCCESS! 150 emoji commits created.
+### emoji-file-commits.sh
+Adds unique emojis to each file, visible in GitHub's file browser.
+```bash
+./emoji-file-commits.sh /path/to/repo
 ```
 
-## Gitmoji Convention Reference
+### emoji-commits.sh
+Safe mode using --allow-empty commits (no file modifications).
+```bash
+./emoji-commits.sh /path/to/repo
+```
 
-The scripts follow [gitmoji](https://gitmoji.dev) conventions:
+## Workflow Scripts (in scripts/)
 
-| Emoji | Code | Use Case |
-|-------|------|----------|
-| 🎉 | `:tada:` | Initial commit |
-| ✨ | `:sparkles:` | New feature |
-| 🐛 | `:bug:` | Bug fix |
-| 🔥 | `:fire:` | Remove code/files |
-| 📝 | `:memo:` | Documentation |
-| 🚀 | `:rocket:` | Deploy |
-| 💄 | `:lipstick:` | UI/style |
-| ♻️ | `:recycle:` | Refactor |
-| 🔧 | `:wrench:` | Config |
-| ✅ | `:white_check_mark:` | Tests |
-| 🔒 | `:lock:` | Security |
-| ⬆️ | `:arrow_up:` | Upgrade deps |
-| ⬇️ | `:arrow_down:` | Downgrade deps |
-| 🏗️ | `:building_construction:` | Architecture |
-| 📦 | `:package:` | Build/package |
+### emoji-commit.sh
+Smart commit with auto-emoji detection based on message keywords.
+```bash
+./scripts/emoji-commit.sh "add user auth"     # → ✨ Add user auth
+./scripts/emoji-commit.sh "fix login bug"     # → 🐛 Fix login bug
+./scripts/emoji-commit.sh "update docs"       # → 📝 Update docs
+```
 
-## Additional Scripts
+Keywords: add/feat→✨, fix/bug→🐛, docs→📝, style→💄, refactor→♻️, test→✅, config→⚙️, security→🔐, deploy→🚀, remove→🗑️
 
-### repo-stats.sh
-Displays repository statistics with visual progress bars and charts.
+### emoji-log.sh
+Beautiful git log viewer with multiple styles.
+```bash
+./scripts/emoji-log.sh              # compact (default)
+./scripts/emoji-log.sh graph        # ASCII graph
+./scripts/emoji-log.sh today        # today's commits
+./scripts/emoji-log.sh week         # this week by day
+./scripts/emoji-log.sh author       # group by author
+./scripts/emoji-log.sh stats -n 10  # with file stats
+```
 
-### git-beautify.sh
-Transforms git log into colorful, icon-enhanced output.
+### emoji-stash.sh
+Stash management with emoji descriptions.
+```bash
+./scripts/emoji-stash.sh save wip "description"     # 🚧
+./scripts/emoji-stash.sh save experiment "testing"  # 🧪
+./scripts/emoji-stash.sh list                       # beautiful list
+./scripts/emoji-stash.sh pop 0                      # pop with confirm
+```
 
-### file-tree.sh
-Enhanced directory listing with file type icons and size info.
+Types: wip→🚧, experiment→🧪, temp→⏳, save→💾, backup→🔐, urgent→🚨, idea→💡, debug→🔍
 
-### commit-lint.sh
-Validates commits follow emoji conventions.
+### emoji-branch.sh
+Create branches with type prefixes.
+```bash
+./scripts/emoji-branch.sh feature user-auth  # → feature/user-auth
+./scripts/emoji-branch.sh fix login-bug      # → fix/login-bug
+```
 
-### changelog-gen.sh
-Generates markdown changelogs grouped by emoji type.
+### emoji-merge.sh
+Merge branches with emoji messages based on branch type.
+```bash
+./scripts/emoji-merge.sh feature/user-auth   # → ✨ Merge feature: user-auth
+./scripts/emoji-merge.sh fix/login-bug       # → 🐛 Merge fix: login-bug
+```
 
-## Technical Details
+### emoji-tag.sh
+Create release tags with emoji prefixes.
+```bash
+./scripts/emoji-tag.sh v1.0.0 major   # → 💥 v1.0.0
+./scripts/emoji-tag.sh v1.1.0 minor   # → ✨ v1.1.0
+./scripts/emoji-tag.sh v1.1.1 patch   # → 🐛 v1.1.1
+```
 
-- **Language**: Bash
-- **Dependencies**: git, sha256sum, standard Unix tools
-- **Compatibility**: Linux, macOS, WSL
-- **License**: MIT
+### emoji-hooks.sh
+Install git hooks for automatic emoji commits.
+```bash
+./scripts/emoji-hooks.sh install    # install hooks
+./scripts/emoji-hooks.sh uninstall  # remove hooks
+./scripts/emoji-hooks.sh status     # check status
+```
 
-## Related Projects
+Hooks installed:
+- commit-msg: auto-add emoji prefix
+- pre-push: show push summary
+- post-commit: celebration message
 
-- [gitmoji](https://gitmoji.dev) - Emoji guide for commits
-- [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - CLI tool
-- [commit-message-emoji](https://github.com/dannyfritz/commit-message-emoji) - Another emoji guide
+## GitHub Actions
 
-## Support
+### emoji-commits.yml
+Auto-beautify on push to main.
 
-- GitHub Issues: https://github.com/nirholas/aesthetics/issues
-- Repository: https://github.com/nirholas/aesthetics
+### commit-lint.yml
+Validate PR commits have emoji prefixes.
 
+### changelog.yml
+Generate changelog grouped by emoji type on release.
 
+## Emoji Reference
+
+468+ unique emojis available, tech/builder focused (no faces, no rainbows).
+
+Common types:
+- ✨ feature/add
+- 🐛 fix/bug
+- 📝 docs
+- 💄 style
+- ♻️ refactor
+- ⚡ perf
+- ✅ test
+- 🔧 chore
+- 🚀 deploy
+- 🔐 security
+
+## Git Aliases
+
+```ini
+[alias]
+    pretty = "!~/.gitpretty/scripts/emoji-commit.sh"
+    pl = "!~/.gitpretty/scripts/emoji-log.sh"
+    ps = "!~/.gitpretty/scripts/emoji-stash.sh"
+```
+
+## Links
+
+- Repository: https://github.com/nirholas/gitpretty
+- npm: https://npmjs.com/package/gitpretty
+- Setup Guide: docs/tutorials/SETUP.md
+- GitHub Actions Guide: docs/tutorials/GITHUB_ACTIONS.md
+- Scenarios: docs/tutorials/SCENARIOS.md

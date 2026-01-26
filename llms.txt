@@ -1,36 +1,30 @@
-# Aesthetics
+# gitpretty
 
-> Beautiful CLI tools for developers who appreciate visual polish
+> Make your git history beautiful
 
-## Overview
+## What is gitpretty?
 
-Aesthetics is a collection of shell scripts that enhance your development workflow with visual elements. The primary tool is `emoji-commits.sh` which adds unique emoji commits to every file in a repository.
+A collection of bash scripts and GitHub Actions that add emojis to your git workflow - commits, branches, tags, logs, and stashes.
 
 ## Core Tools
 
-- `emoji-commits.sh` - Add unique emoji commits to files
-- `scripts/repo-stats.sh` - Repository statistics
-- `scripts/git-beautify.sh` - Beautified git log
-- `scripts/file-tree.sh` - Enhanced file tree
-- `scripts/commit-lint.sh` - Commit linting
-- `scripts/changelog-gen.sh` - Changelog generation
+- emoji-file-commits.sh - Add visible emojis to GitHub file browser
+- emoji-commit.sh - Smart commits with auto-emoji detection
+- emoji-log.sh - Beautiful git log viewer
+- emoji-stash.sh - Stash management with emojis
+- emoji-branch.sh - Create emoji-prefixed branches
+- emoji-merge.sh - Merge with emoji messages
+- emoji-tag.sh - Release tags with emojis
+- emoji-hooks.sh - Git hooks for auto-emoji
 
 ## Quick Start
 
 ```bash
-git clone https://github.com/nirholas/aesthetics.git
-cd aesthetics
-chmod +x *.sh scripts/*.sh
-./emoji-commits.sh /path/to/repo
+git clone https://github.com/nirholas/gitpretty.git
+./gitpretty/emoji-file-commits.sh /path/to/repo
 ```
-
-## Safety
-
-All scripts use `--allow-empty` commits and SHA256 checksums to ensure zero file modifications.
 
 ## Links
 
-- Repository: https://github.com/nirholas/aesthetics
-- Documentation: https://github.com/nirholas/aesthetics/tree/main/docs
-
-
+- Repo: https://github.com/nirholas/gitpretty
+- Docs: docs/tutorials/SETUP.md

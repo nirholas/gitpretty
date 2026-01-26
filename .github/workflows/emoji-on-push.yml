@@ -1,0 +1,61 @@
+# 🎨 Auto Emoji Commits - Runs on every push
+# This workflow automatically adds emoji commits to new/changed files
+name: 🎨 Auto Emoji Commits
+
+on:
+  push:
+    branches: [main, master]
+    paths-ignore:
+      - '.github/**'
+      - '*.md'
+
+jobs:
+  emoji-commits:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🔧 Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: 🎯 Get changed files
+        id: changed
+        run: |
+          CHANGED=$(git diff --name-only HEAD~1 HEAD 2>/dev/null || git ls-files)
+          echo "files<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGED" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          echo "Changed files: $CHANGED"
+
+      - name: 🎨 Add emoji commits
+        run: |
+          EMOJIS=("⭐" "🌟" "✨" "💫" "🌠" "🔆" "🔅" "🚀" "🛠️" "⚙️" "🔧" "🔩" "⛏️" "🔨" "🪛" "🪚")
+          
+          INDEX=0
+          while IFS= read -r file; do
+            if [ -n "$file" ] && [ -f "$file" ]; then
+              EMOJI="${EMOJIS[$INDEX % 16]}"
+              NAME=$(basename "$file")
+              
+              # Add trailing newline
+              echo "" >> "$file"
+              git add "$file"
+              git commit -m "$EMOJI $NAME" --quiet || true
+              
+              echo "[$((INDEX+1))] $EMOJI $file"
+              ((INDEX++))
+            fi
+          done <<< "${{ steps.changed.outputs.files }}"
+
+      - name: 📤 Push changes
+        run: |
+          git push origin HEAD:${{ github.ref_name }} || echo "Nothing to push"

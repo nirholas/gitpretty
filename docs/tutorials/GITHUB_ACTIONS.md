@@ -17,7 +17,7 @@ Automatically beautifies commits when pushed to main.
 ```bash
 # Copy to your repo
 mkdir -p .github/workflows
-cp aesthetics/.github/workflows/emoji-commits.yml .github/workflows/
+cp gitpretty/.github/workflows/emoji-commits.yml .github/workflows/
 ```
 
 **Configuration:**
@@ -63,7 +63,7 @@ Validates that PR commits follow emoji conventions.
 
 **Installation:**
 ```bash
-cp aesthetics/.github/workflows/commit-lint.yml .github/workflows/
+cp gitpretty/.github/workflows/commit-lint.yml .github/workflows/
 ```
 
 **Configuration:**
@@ -119,7 +119,7 @@ Generates changelog from emoji commits on release.
 
 **Installation:**
 ```bash
-cp aesthetics/.github/workflows/changelog.yml .github/workflows/
+cp gitpretty/.github/workflows/changelog.yml .github/workflows/
 ```
 
 ---

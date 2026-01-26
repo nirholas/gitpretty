@@ -1,6 +1,6 @@
 # 🔒 Safety Features
 
-All Aesthetics scripts that interact with git repositories include robust safety features to prevent data loss and ensure file integrity.
+All GitPretty scripts that interact with git repositories include robust safety features to prevent data loss and ensure file integrity.
 
 ## Core Safety Principles
 

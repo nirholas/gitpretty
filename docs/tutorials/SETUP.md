@@ -1,4 +1,4 @@
-# 📚 Aesthetics Setup Guide
+# 📚 GitPretty Setup Guide
 
 Complete guide to setting up emoji-powered git workflows for beautiful repositories.
 
@@ -7,8 +7,8 @@ Complete guide to setting up emoji-powered git workflows for beautiful repositor
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/nirholas/aesthetics.git
-cd aesthetics
+git clone https://github.com/nirholas/gitpretty.git
+cd gitpretty
 ```
 
 ### 2. Make Scripts Executable
@@ -21,8 +21,8 @@ chmod +x *.sh scripts/*.sh
 
 ```bash
 # Add to your ~/.bashrc or ~/.zshrc
-export PATH="$PATH:/path/to/aesthetics"
-export PATH="$PATH:/path/to/aesthetics/scripts"
+export PATH="$PATH:/path/to/gitpretty"
+export PATH="$PATH:/path/to/gitpretty/scripts"
 ```
 
 ### 4. Run Your First Emoji Commit
@@ -30,10 +30,10 @@ export PATH="$PATH:/path/to/aesthetics/scripts"
 ```bash
 # Beautify an existing repo
 cd /path/to/your/repo
-/path/to/aesthetics/emoji-file-commits.sh
+/path/to/gitpretty/emoji-file-commits.sh
 
 # Or use the smart commit tool
-/path/to/aesthetics/scripts/emoji-commit.sh "add awesome feature"
+/path/to/gitpretty/scripts/emoji-commit.sh "add awesome feature"
 ```
 
 ---
@@ -49,7 +49,7 @@ For your own repos where you have full control:
 cd ~/projects/my-awesome-project
 
 # 2. Install git hooks for automatic emojis
-/path/to/aesthetics/scripts/emoji-hooks.sh install
+/path/to/gitpretty/scripts/emoji-hooks.sh install
 
 # 3. Every commit now gets auto-emoji! 🎉
 git add .
@@ -64,7 +64,7 @@ For collaborative repos with conventional commits:
 ```bash
 # 1. Copy the GitHub Action to your repo
 mkdir -p .github/workflows
-cp /path/to/aesthetics/.github/workflows/commit-lint.yml .github/workflows/
+cp /path/to/gitpretty/.github/workflows/commit-lint.yml .github/workflows/
 
 # 2. Now PRs without emojis will be flagged
 # Team members can use emoji-commit.sh locally
@@ -77,10 +77,10 @@ Transform a plain repo into an emoji masterpiece:
 ```bash
 # Option A: Safe mode (empty commits, preserves history)
 cd /path/to/existing-repo
-/path/to/aesthetics/emoji-commits.sh
+/path/to/gitpretty/emoji-commits.sh
 
 # Option B: Visible emojis (modifies files, shows in GitHub UI)
-/path/to/aesthetics/emoji-file-commits.sh
+/path/to/gitpretty/emoji-file-commits.sh
 ```
 
 ### Scenario 4: CI/CD Integration
@@ -89,7 +89,7 @@ Auto-emoji on every push:
 
 ```bash
 # Copy the workflow
-cp /path/to/aesthetics/.github/workflows/emoji-commits.yml .github/workflows/
+cp /path/to/gitpretty/.github/workflows/emoji-commits.yml .github/workflows/
 
 # Commits pushed to main will get emoji beautification
 ```
@@ -102,16 +102,16 @@ cp /path/to/aesthetics/.github/workflows/emoji-commits.yml .github/workflows/
 
 ```bash
 # 1. Clone to a permanent location
-sudo git clone https://github.com/nirholas/aesthetics.git /opt/aesthetics
+sudo git clone https://github.com/nirholas/gitpretty.git /opt/gitpretty
 
 # 2. Create symlinks
-sudo ln -s /opt/aesthetics/scripts/emoji-commit.sh /usr/local/bin/emoji-commit
-sudo ln -s /opt/aesthetics/scripts/emoji-stash.sh /usr/local/bin/emoji-stash
-sudo ln -s /opt/aesthetics/scripts/emoji-log.sh /usr/local/bin/emoji-log
-sudo ln -s /opt/aesthetics/scripts/emoji-branch.sh /usr/local/bin/emoji-branch
-sudo ln -s /opt/aesthetics/scripts/emoji-tag.sh /usr/local/bin/emoji-tag
-sudo ln -s /opt/aesthetics/scripts/emoji-merge.sh /usr/local/bin/emoji-merge
-sudo ln -s /opt/aesthetics/scripts/emoji-hooks.sh /usr/local/bin/emoji-hooks
+sudo ln -s /opt/gitpretty/scripts/emoji-commit.sh /usr/local/bin/emoji-commit
+sudo ln -s /opt/gitpretty/scripts/emoji-stash.sh /usr/local/bin/emoji-stash
+sudo ln -s /opt/gitpretty/scripts/emoji-log.sh /usr/local/bin/emoji-log
+sudo ln -s /opt/gitpretty/scripts/emoji-branch.sh /usr/local/bin/emoji-branch
+sudo ln -s /opt/gitpretty/scripts/emoji-tag.sh /usr/local/bin/emoji-tag
+sudo ln -s /opt/gitpretty/scripts/emoji-merge.sh /usr/local/bin/emoji-merge
+sudo ln -s /opt/gitpretty/scripts/emoji-hooks.sh /usr/local/bin/emoji-hooks
 
 # 3. Now available everywhere!
 emoji-commit "add feature"
@@ -123,10 +123,10 @@ emoji-log graph
 
 ```bash
 # 1. Clone to home directory
-git clone https://github.com/nirholas/aesthetics.git ~/.aesthetics
+git clone https://github.com/nirholas/gitpretty.git ~/.gitpretty
 
 # 2. Add to PATH in ~/.bashrc or ~/.zshrc
-echo 'export PATH="$PATH:$HOME/.aesthetics:$HOME/.aesthetics/scripts"' >> ~/.bashrc
+echo 'export PATH="$PATH:$HOME/.gitpretty:$HOME/.gitpretty/scripts"' >> ~/.bashrc
 source ~/.bashrc
 
 # 3. Use anywhere!
@@ -137,13 +137,13 @@ emoji-commit.sh "fix bug"
 
 ```bash
 # 1. Add as git submodule
-git submodule add https://github.com/nirholas/aesthetics.git tools/aesthetics
+git submodule add https://github.com/nirholas/gitpretty.git tools/gitpretty
 
 # 2. Reference in package.json scripts
 {
   "scripts": {
-    "commit": "./tools/aesthetics/scripts/emoji-commit.sh",
-    "beautify": "./tools/aesthetics/emoji-file-commits.sh"
+    "commit": "./tools/gitpretty/scripts/emoji-commit.sh",
+    "beautify": "./tools/gitpretty/emoji-file-commits.sh"
   }
 }
 ```
@@ -159,22 +159,22 @@ Add these to your `~/.gitconfig`:
 ```ini
 [alias]
     # Emoji commit
-    ec = "!f() { ~/.aesthetics/scripts/emoji-commit.sh \"$@\"; }; f"
+    ec = "!f() { ~/.gitpretty/scripts/emoji-commit.sh \"$@\"; }; f"
     
     # Emoji log
-    el = "!~/.aesthetics/scripts/emoji-log.sh"
-    elg = "!~/.aesthetics/scripts/emoji-log.sh graph"
-    elt = "!~/.aesthetics/scripts/emoji-log.sh today"
+    el = "!~/.gitpretty/scripts/emoji-log.sh"
+    elg = "!~/.gitpretty/scripts/emoji-log.sh graph"
+    elt = "!~/.gitpretty/scripts/emoji-log.sh today"
     
     # Emoji stash
-    es = "!~/.aesthetics/scripts/emoji-stash.sh"
-    esl = "!~/.aesthetics/scripts/emoji-stash.sh list"
+    es = "!~/.gitpretty/scripts/emoji-stash.sh"
+    esl = "!~/.gitpretty/scripts/emoji-stash.sh list"
     
     # Emoji branch
-    eb = "!~/.aesthetics/scripts/emoji-branch.sh"
+    eb = "!~/.gitpretty/scripts/emoji-branch.sh"
     
     # Emoji merge
-    em = "!~/.aesthetics/scripts/emoji-merge.sh"
+    em = "!~/.gitpretty/scripts/emoji-merge.sh"
 ```
 
 Usage:
@@ -215,10 +215,10 @@ alias gt='emoji-tag.sh'
 
 ### Custom Emoji Sets
 
-Create your own emoji mapping in `~/.aesthetics-config`:
+Create your own emoji mapping in `~/.gitpretty-config`:
 
 ```bash
-# ~/.aesthetics-config
+# ~/.gitpretty-config
 EMOJI_FEAT="🌟"      # Instead of ✨
 EMOJI_FIX="🔨"       # Instead of 🐛
 EMOJI_DOCS="📖"      # Instead of 📝
@@ -230,7 +230,7 @@ EMOJI_DEFAULT="💎"   # Instead of ✨
 Create a team config file:
 
 ```bash
-# .aesthetics-team
+# .gitpretty-team
 # Emoji standards for ACME Corp
 
 TYPE_EMOJIS=(
@@ -277,8 +277,8 @@ emoji-hooks.sh install
 **Solution:**
 ```bash
 # Make all scripts executable
-chmod +x ~/.aesthetics/*.sh
-chmod +x ~/.aesthetics/scripts/*.sh
+chmod +x ~/.gitpretty/*.sh
+chmod +x ~/.gitpretty/scripts/*.sh
 ```
 
 ### Emojis Display as Boxes

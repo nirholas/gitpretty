@@ -1,4 +1,4 @@
-# Contributing to Aesthetics
+# Contributing to GitPretty
 
 Thank you for your interest in contributing! 🎉
 
@@ -14,8 +14,8 @@ Thank you for your interest in contributing! 🎉
 
 ```bash
 # Clone the repo
-git clone https://github.com/nirholas/aesthetics.git
-cd aesthetics
+git clone https://github.com/nirholas/gitpretty.git
+cd gitpretty
 
 # Make scripts executable
 chmod +x *.sh scripts/*.sh
@@ -27,7 +27,7 @@ echo "test" > test.txt
 git add . && git commit -m "initial"
 
 # Test changes
-/path/to/aesthetics/emoji-commits.sh .
+/path/to/gitpretty/emoji-commits.sh .
 ```
 
 ## Code Style

@@ -1,6 +1,6 @@
 # 🎬 Real-World Scenarios
 
-Practical examples of using emoji aesthetics in different situations.
+Practical examples of using emoji gitpretty in different situations.
 
 ---
 
@@ -16,7 +16,7 @@ mkdir awesome-project && cd awesome-project
 git init
 
 # 2. Install emoji hooks immediately
-~/.aesthetics/scripts/emoji-hooks.sh install
+~/.gitpretty/scripts/emoji-hooks.sh install
 
 # 3. Create initial files
 echo "# Awesome Project" > README.md
@@ -87,10 +87,10 @@ EOF
 # Each developer installs locally
 git clone your-repo
 cd your-repo
-~/.aesthetics/scripts/emoji-hooks.sh install
+~/.gitpretty/scripts/emoji-hooks.sh install
 
 # Or uses emoji-commit for manual control
-~/.aesthetics/scripts/emoji-commit.sh "add payment processing"
+~/.gitpretty/scripts/emoji-commit.sh "add payment processing"
 ```
 
 ### Result
@@ -109,7 +109,7 @@ You have an existing repo with years of plain commits and want to add visual app
 ```bash
 # Just install hooks - old history stays, new commits get emojis
 cd legacy-repo
-~/.aesthetics/scripts/emoji-hooks.sh install
+~/.gitpretty/scripts/emoji-hooks.sh install
 ```
 
 ### Option B: Beautify All Files (Non-Destructive)
@@ -117,7 +117,7 @@ cd legacy-repo
 ```bash
 # Add emoji commits to all current files
 cd legacy-repo
-~/.aesthetics/emoji-file-commits.sh
+~/.gitpretty/emoji-file-commits.sh
 
 # This adds NEW commits with emojis, doesn't rewrite history
 git push
@@ -128,7 +128,7 @@ git push
 ```bash
 # Set up GitHub Action to beautify on push
 mkdir -p .github/workflows
-cp ~/.aesthetics/.github/workflows/emoji-commits.yml .github/workflows/
+cp ~/.gitpretty/.github/workflows/emoji-commits.yml .github/workflows/
 git add .github/workflows/
 git commit -m "🤖 Add auto-emoji workflow"
 git push
@@ -149,7 +149,7 @@ Using emojis to make releases beautiful and informative.
 
 ```bash
 # 1. Create release branch
-~/.aesthetics/scripts/emoji-branch.sh release v2.0.0
+~/.gitpretty/scripts/emoji-branch.sh release v2.0.0
 # → Creates: release/v2.0.0
 
 # 2. Prepare release commits
@@ -158,11 +158,11 @@ git commit -m "📝 Update changelog"
 git commit -m "🔧 Update dependencies"
 
 # 3. Create release tag
-~/.aesthetics/scripts/emoji-tag.sh v2.0.0 major
+~/.gitpretty/scripts/emoji-tag.sh v2.0.0 major
 # → Creates: v2.0.0 with 💥 tag message
 
 # 4. Merge to main with emoji
-~/.aesthetics/scripts/emoji-merge.sh release/v2.0.0
+~/.gitpretty/scripts/emoji-merge.sh release/v2.0.0
 # → 🚀 Merge release: v2.0.0
 ```
 
@@ -170,7 +170,7 @@ git commit -m "🔧 Update dependencies"
 
 ```bash
 # Generate changelog from emoji commits
-~/.aesthetics/scripts/changelog-gen.sh
+~/.gitpretty/scripts/changelog-gen.sh
 
 # Output groups by emoji type:
 # ✨ Features
@@ -191,7 +191,7 @@ Make PRs easier to review with organized commits.
 
 ```bash
 # Feature development
-~/.aesthetics/scripts/emoji-branch.sh feature user-preferences
+~/.gitpretty/scripts/emoji-branch.sh feature user-preferences
 # → feature/user-preferences
 
 # Each commit organized
@@ -224,7 +224,7 @@ Understanding your commit patterns through emojis.
 
 ```bash
 # Get repo statistics
-~/.aesthetics/scripts/repo-stats.sh
+~/.gitpretty/scripts/repo-stats.sh
 
 # Output:
 # 📊 Repository Statistics
@@ -244,7 +244,7 @@ Understanding your commit patterns through emojis.
 
 ```bash
 # See this week's progress
-~/.aesthetics/scripts/emoji-log.sh week
+~/.gitpretty/scripts/emoji-log.sh week
 
 # Output grouped by day with emoji stats
 ```
@@ -270,10 +270,10 @@ git commit -m "📦 [all] Update dependencies"
 ```bash
 # Only beautify specific package
 cd packages/api
-~/.aesthetics/emoji-file-commits.sh --path .
+~/.gitpretty/emoji-file-commits.sh --path .
 
 # Or use include pattern
-~/.aesthetics/emoji-file-commits.sh --include "packages/api/**"
+~/.gitpretty/emoji-file-commits.sh --include "packages/api/**"
 ```
 
 ---
@@ -286,7 +286,7 @@ Using emojis in a corporate environment.
 
 ```bash
 # Create conservative emoji config
-cat > .aesthetics-config << 'EOF'
+cat > .gitpretty-config << 'EOF'
 # Minimal professional emoji set
 TYPE_EMOJIS=(
     ["feat"]="+"
@@ -312,7 +312,7 @@ EOF
 ```bash
 # Only validate, don't auto-modify
 # Use commit-lint workflow without auto-beautify
-cp ~/.aesthetics/.github/workflows/commit-lint.yml .github/workflows/
+cp ~/.gitpretty/.github/workflows/commit-lint.yml .github/workflows/
 # Don't copy emoji-commits.yml
 ```
 

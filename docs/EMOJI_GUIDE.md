@@ -1,6 +1,6 @@
 # 🎨 Emoji Guide
 
-Complete reference for emoji commit conventions used in Aesthetics.
+Complete reference for emoji commit conventions used in GitPretty.
 
 ## Gitmoji Standard
 
@@ -68,7 +68,7 @@ Based on [gitmoji.dev](https://gitmoji.dev) - the emoji guide for commit message
 | 🗑️ | `:wastebasket:` | Deprecate code |
 | 🧪 | `:test_tube:` | Add a failing test |
 
-## Aesthetics Extended Set (609 Emojis)
+## GitPretty Extended Set (609 Emojis)
 
 For `emoji-commits.sh`, we use an extended set of 609 unique emojis organized into categories:
 
@@ -116,7 +116,7 @@ For `emoji-commits.sh`, we use an extended set of 609 unique emojis organized in
 
 ## Design Principles
 
-The Aesthetics emoji set follows these principles:
+The GitPretty emoji set follows these principles:
 
 1. **No faces** - No emoji with facial expressions
 2. **No rainbows** - Clean tech aesthetic
