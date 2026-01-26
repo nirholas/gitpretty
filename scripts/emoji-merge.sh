@@ -98,3 +98,4 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo "🗑️  Branch deleted"
     fi
 fi
+
