@@ -355,3 +355,4 @@ cp ~/.gitpretty/.github/workflows/commit-lint.yml .github/workflows/
 - [Setup Guide](SETUP.md) - Installation instructions
 - [GitHub Actions](GITHUB_ACTIONS.md) - CI/CD automation
 - [Main README](../../README.md) - Full documentation
+
