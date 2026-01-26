@@ -1,0 +1,34 @@
+# Aesthetics
+
+> Beautiful CLI tools for developers who appreciate visual polish
+
+## Overview
+
+Aesthetics is a collection of shell scripts that enhance your development workflow with visual elements. The primary tool is `emoji-commits.sh` which adds unique emoji commits to every file in a repository.
+
+## Core Tools
+
+- `emoji-commits.sh` - Add unique emoji commits to files
+- `scripts/repo-stats.sh` - Repository statistics
+- `scripts/git-beautify.sh` - Beautified git log
+- `scripts/file-tree.sh` - Enhanced file tree
+- `scripts/commit-lint.sh` - Commit linting
+- `scripts/changelog-gen.sh` - Changelog generation
+
+## Quick Start
+
+```bash
+git clone https://github.com/nirholas/aesthetics.git
+cd aesthetics
+chmod +x *.sh scripts/*.sh
+./emoji-commits.sh /path/to/repo
+```
+
+## Safety
+
+All scripts use `--allow-empty` commits and SHA256 checksums to ensure zero file modifications.
+
+## Links
+
+- Repository: https://github.com/nirholas/aesthetics
+- Documentation: https://github.com/nirholas/aesthetics/tree/main/docs
