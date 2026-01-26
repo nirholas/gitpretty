@@ -33,3 +33,4 @@ All scripts use `--allow-empty` commits and SHA256 checksums to ensure zero file
 - Repository: https://github.com/nirholas/aesthetics
 - Documentation: https://github.com/nirholas/aesthetics/tree/main/docs
 
+
