@@ -168,3 +168,4 @@ Generates markdown changelogs grouped by emoji type.
 - GitHub Issues: https://github.com/nirholas/aesthetics/issues
 - Repository: https://github.com/nirholas/aesthetics
 
+
