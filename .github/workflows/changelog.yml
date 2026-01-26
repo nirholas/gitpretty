@@ -77,3 +77,4 @@ jobs:
           git add CHANGELOG.md
           git commit -m "📋 Update changelog" || echo "No changes"
           git push || echo "Nothing to push"
+
