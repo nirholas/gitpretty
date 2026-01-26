@@ -50,3 +50,4 @@ jobs:
           fi
           
           echo "✅ All commits follow emoji conventions!"
+
