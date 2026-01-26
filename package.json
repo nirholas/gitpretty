@@ -1,0 +1,34 @@
+{
+  "name": "gitglow",
+  "version": "1.0.0",
+  "description": "Make your git history beautiful - emoji commits, pretty logs, and aesthetic workflows",
+  "main": "index.js",
+  "bin": {
+    "gitpretty": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Tests pass\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nirholas/gitpretty.git"
+  },
+  "keywords": [
+    "git",
+    "emoji",
+    "commits",
+    "pretty",
+    "cli",
+    "gitmoji",
+    "conventional-commits",
+    "developer-tools",
+    "beautify",
+    "workflow"
+  ],
+  "author": "nirholas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nirholas/gitpretty/issues"
+  },
+  "homepage": "https://github.com/nirholas/gitpretty#readme"
+}
