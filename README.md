@@ -6,48 +6,250 @@
 [![Bash](https://img.shields.io/badge/Shell-Bash-green.svg)](https://www.gnu.org/software/bash/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-## ✨ What is Aesthetics?
+## ✨ See It In Action
 
-Aesthetics is a toolkit of shell scripts that make your development workflow more beautiful. Each script is designed with visual appeal, safety, and efficiency in mind.
+After running `emoji-file-commits.sh`, your GitHub repository looks like this:
 
-Inspired by [gitmoji](https://gitmoji.dev) and [commit-message-emoji](https://github.com/dannyfritz/commit-message-emoji).
+```
+📁 your-repo
+├── ⭐ README.md                 2 minutes ago
+├── 🌟 package.json              2 minutes ago
+├── ✨ tsconfig.json             2 minutes ago
+├── 💫 src/
+│   ├── 🌠 index.ts              2 minutes ago
+│   ├── 🔆 utils.ts              2 minutes ago
+│   └── 🔅 config.ts             2 minutes ago
+├── 🚀 docs/
+│   └── 🛠️ API.md                2 minutes ago
+└── ⚙️ tests/
+    └── 🔧 index.test.ts         2 minutes ago
+```
+
+Every file gets a unique emoji visible directly in GitHub's file browser!
 
 ## 🛠️ Scripts
 
-| Script | Description |
-|--------|-------------|
-| [emoji-commits.sh](emoji-commits.sh) | Add unique emoji commits to every file in a repository |
-| [repo-stats.sh](scripts/repo-stats.sh) | Beautiful repository statistics with visual charts |
-| [git-beautify.sh](scripts/git-beautify.sh) | Beautify git log with semantic emoji prefixes |
-| [file-tree.sh](scripts/file-tree.sh) | Enhanced tree view with file type icons |
-| [commit-lint.sh](scripts/commit-lint.sh) | Lint commits for proper emoji conventions |
-| [changelog-gen.sh](scripts/changelog-gen.sh) | Generate beautiful changelogs from emoji commits |
+| Script | Description | GitHub Visible? |
+|--------|-------------|-----------------|
+| **[emoji-file-commits.sh](emoji-file-commits.sh)** | Emoji per file in GitHub browser | ✅ Yes |
+| [emoji-commits.sh](emoji-commits.sh) | Empty commits with emojis (safe) | ❌ No |
+| [repo-stats.sh](scripts/repo-stats.sh) | Repository statistics | - |
+| [git-beautify.sh](scripts/git-beautify.sh) | Beautified git log | - |
+| [file-tree.sh](scripts/file-tree.sh) | Enhanced tree with icons | - |
+| [commit-lint.sh](scripts/commit-lint.sh) | Lint emoji conventions | - |
+| [changelog-gen.sh](scripts/changelog-gen.sh) | Generate changelogs | - |
 
 ## 🚀 Quick Start
 
+### Make Your GitHub Beautiful (Most Popular!)
+
 ```bash
-# Clone the repository
+# Clone aesthetics
 git clone https://github.com/nirholas/aesthetics.git
-cd aesthetics
 
-# Make scripts executable
-chmod +x *.sh scripts/*.sh
+# Run on your repository
+./aesthetics/emoji-file-commits.sh /path/to/your-repo
 
-# Run emoji commits on a repository
-./emoji-commits.sh /path/to/your/repo
+# Push to see emojis in GitHub
+cd /path/to/your-repo && git push
 ```
+
+**Result:** Every file shows a unique emoji in GitHub's file browser!
+
+### One-Liner
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/nirholas/aesthetics/main/emoji-file-commits.sh | bash -s /path/to/repo
+```
+
+## 📖 Script Details
+
+### ⭐ emoji-file-commits.sh (Recommended)
+
+**Makes emojis visible in GitHub's file browser.**
+
+Each file is touched and committed with a unique emoji, so GitHub shows the emoji next to each filename.
+
+```bash
+./emoji-file-commits.sh /path/to/your-repo
+```
+
+**Before:**
+```
+Name                    Last commit message
+README.md               Update documentation
+package.json            Update dependencies  
+src/index.ts            Fix bug
+```
+
+**After:**
+```
+Name                    Last commit message
+README.md               ⭐ README.md
+package.json            🌟 package.json
+src/index.ts            ✨ index.ts
+```
+
+---
+
+### 🔒 emoji-commits.sh (Safe Mode)
+
+Uses `--allow-empty` commits - no file modifications. Good for adding emoji history without changing files.
+
+```bash
+./emoji-commits.sh /path/to/your-repo
+```
+
+**Features:**
+- ✅ 609 unique emojis
+- ✅ SHA256 checksum verification
+- ✅ Zero file modifications
+- ✅ Detailed verification reports
+
+---
+
+### 📊 repo-stats.sh
+
+Display beautiful repository statistics.
+
+```bash
+./scripts/repo-stats.sh /path/to/repo
+```
+
+**Output:**
+```
+╔══════════════════════════════════════════════════════════╗
+║  📊 Repository Statistics                                ║
+║     my-project                                           ║
+╚══════════════════════════════════════════════════════════╝
+
+📁 Files
+   Total files:       156
+   Total directories: 23
+
+📝 Git History
+   Total commits:     342
+   Branches:          5
+   Contributors:      3
+
+📊 File Types
+
+   .ts        78 files  [████████████████████████████░░] 100%
+   .json      12 files  [████░░░░░░░░░░░░░░░░░░░░░░░░░░]  15%
+   .md         8 files  [███░░░░░░░░░░░░░░░░░░░░░░░░░░░]  10%
+```
+
+---
+
+### 🌈 git-beautify.sh
+
+Beautified git log with emoji prefixes.
+
+```bash
+./scripts/git-beautify.sh --limit 10
+```
+
+**Output:**
+```
+╔══════════════════════════════════════════════════════════╗
+║  🌈 Git Log - Beautified                                 ║
+╚══════════════════════════════════════════════════════════╝
+
+a1b2c3d ✨ Add user authentication (2 hours ago)
+b2c3d4e 🐛 Fix login bug (5 hours ago)
+c3d4e5f 📝 Update documentation (yesterday)
+d4e5f6g ♻️ Refactor API (2 days ago)
+```
+
+---
+
+### 🌳 file-tree.sh
+
+Enhanced directory tree with file type icons.
+
+```bash
+./scripts/file-tree.sh --depth 2 --size
+```
+
+**Output:**
+```
+my-project/
+├── 📝 README.md (2.4K)
+├── 📋 package.json (1.2K)
+├── 📂 src/
+│   ├── 🔷 index.ts (0.5K)
+│   └── 🔷 utils.ts (1.8K)
+└── 🧪 tests/
+    └── 🔷 index.test.ts (1.1K)
+```
+
+---
+
+### ✅ commit-lint.sh
+
+Validate commits follow emoji conventions.
+
+```bash
+./scripts/commit-lint.sh --fix
+```
+
+**Output:**
+```
+✓ a1b2c3d ✨ Add user authentication
+✓ b2c3d4e 🐛 Fix login bug
+✗ c3d4e5f Update documentation
+  ↳ Suggested: 📝 Update documentation
+
+Passed: 2
+Failed: 1
+```
+
+---
+
+### 📋 changelog-gen.sh
+
+Generate changelogs from emoji commits.
+
+```bash
+./scripts/changelog-gen.sh --since v1.0.0 --output CHANGELOG.md
+```
+
+**Output:**
+```markdown
+# Changelog
+
+## Changes from v1.0.0 to HEAD
+
+### ✨ Features
+- Add user authentication (`a1b2c3d`)
+- Add password reset (`f6g7h8i`)
+
+### 🐛 Bug Fixes
+- Fix login redirect (`b2c3d4e`)
+```
+
+## 🎨 468 Unique Emojis
+
+| Category | Examples | Count |
+|----------|----------|-------|
+| Stars | ⭐ 🌟 ✨ 💫 | 7 |
+| Tech & Tools | 🚀 🛠️ ⚙️ 🔧 💻 | 30 |
+| Shapes | 💎 🔷 🔶 💠 | 33 |
+| Nature | 🌱 🌿 🍀 🌲 | 30 |
+| Space | 🌍 🪐 🌙 ☄️ | 17 |
+| Buildings | 🏗️ 🏛️ 🏰 🗼 | 35 |
+| Vehicles | 🚂 ✈️ 🛸 🚢 | 56 |
+| Office | 📦 📝 📁 🔒 | 56 |
+| Media | 📔 📖 📷 🔍 | 37 |
+| Art & Music | 🎨 🎭 🎵 🎸 | 26 |
+| Games | 🎯 🎮 🎲 🏆 | 51 |
+| Celebration | 🎀 🎁 🎈 🎉 | 14 |
+| Hearts | ❤️ 💙 💜 💖 | 19 |
+| Symbols | ☮️ ⚛️ ♻️ ✖️ | 78+ |
 
 ## 📦 Installation
 
-### Option 1: Clone and Use
-
-```bash
-git clone https://github.com/nirholas/aesthetics.git
-cd aesthetics
-chmod +x *.sh scripts/*.sh
-```
-
-### Option 2: Add to PATH
+### Clone
 
 ```bash
 git clone https://github.com/nirholas/aesthetics.git ~/.aesthetics
@@ -55,139 +257,33 @@ echo 'export PATH="$HOME/.aesthetics:$HOME/.aesthetics/scripts:$PATH"' >> ~/.bas
 source ~/.bashrc
 ```
 
-### Option 3: Single Script Download
+### Download Single Script
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/nirholas/aesthetics/main/emoji-commits.sh -o emoji-commits.sh
-chmod +x emoji-commits.sh
+curl -fsSL https://raw.githubusercontent.com/nirholas/aesthetics/main/emoji-file-commits.sh -o emoji-file-commits.sh
+chmod +x emoji-file-commits.sh
 ```
 
-## 📖 Script Documentation
+## 🔒 Safety
 
-### 🎯 emoji-commits.sh
+- `emoji-commits.sh` uses `--allow-empty` (zero file changes)
+- `emoji-file-commits.sh` only touches files (updates timestamp)
+- SHA256 checksums for verification
+- Pre/post manifests for comparison
 
-Creates individual commits for every file in your repository, each with a unique emoji.
+## 🔗 Inspired By
 
-**Features:**
-- ✅ 609 unique tech/builder emojis (no faces, no rainbows)
-- ✅ SHA256 checksum verification (zero file modifications)
-- ✅ Uses `--allow-empty` commits for safety
-- ✅ Detailed logging and verification reports
-
-**Usage:**
-```bash
-./emoji-commits.sh /path/to/repository
-```
-
-### 📊 repo-stats.sh
-
-Display beautiful repository statistics with visual progress bars.
-
-```bash
-./scripts/repo-stats.sh [repository-path]
-```
-
-### 🌈 git-beautify.sh
-
-Transform git log into colorful output with semantic emoji prefixes.
-
-```bash
-./scripts/git-beautify.sh [--limit N] [--format oneline|full]
-```
-
-### 🌳 file-tree.sh
-
-Enhanced directory tree with file type icons.
-
-```bash
-./scripts/file-tree.sh [directory] [--depth N] [--size]
-```
-
-### ✅ commit-lint.sh
-
-Validate commits follow emoji conventions.
-
-```bash
-./scripts/commit-lint.sh [--strict] [--fix]
-```
-
-### 📋 changelog-gen.sh
-
-Generate changelogs from emoji commits.
-
-```bash
-./scripts/changelog-gen.sh [--since TAG] [--format md|json]
-```
-
-## 🎨 Emoji Convention
-
-Based on [gitmoji](https://gitmoji.dev) standards:
-
-| Emoji | Code | Description |
-|-------|------|-------------|
-| 🎉 | `:tada:` | Initial commit |
-| ✨ | `:sparkles:` | New feature |
-| 🐛 | `:bug:` | Bug fix |
-| 🔥 | `:fire:` | Remove code/files |
-| 📝 | `:memo:` | Documentation |
-| 🚀 | `:rocket:` | Deploy |
-| 💄 | `:lipstick:` | UI/style updates |
-| ♻️ | `:recycle:` | Refactor |
-| 🔧 | `:wrench:` | Configuration |
-| ✅ | `:white_check_mark:` | Tests |
-| 🔒 | `:lock:` | Security |
-| ⬆️ | `:arrow_up:` | Upgrade deps |
-| ⬇️ | `:arrow_down:` | Downgrade deps |
-| 🏗️ | `:building_construction:` | Architecture |
-| 📦 | `:package:` | Package/build |
-
-[Full emoji list →](docs/EMOJI_GUIDE.md)
-
-## 🎨 Unique Emoji Categories (609 total)
-
-| Category | Examples | Count |
-|----------|----------|-------|
-| Stars & Sparkles | ⭐ 🌟 ✨ 💫 | 7 |
-| Tech & Tools | 🚀 🛠️ ⚙️ 🔧 💻 | 30 |
-| Geometric Shapes | 💎 🔷 🔶 🔹 | 33 |
-| Nature Elements | 🌱 🌿 🍀 🌲 | 30 |
-| Space & Cosmic | 🌍 🪐 🌙 ☄️ | 17 |
-| Buildings | 🏗️ 🏛️ 🏰 🗼 | 35 |
-| Vehicles | 🚂 ✈️ 🛸 🚀 | 56 |
-| Office & Documents | 📦 📝 📁 🔒 | 56 |
-| Books & Media | 📔 📖 📷 🔍 | 37 |
-| Art & Music | 🎨 🎭 🎵 🎸 | 26 |
-| Games & Sports | 🎯 🎮 🎲 🏆 | 51 |
-| Celebration | 🎀 🎁 🎈 🎉 | 14 |
-| Hearts | ❤️ 💙 💜 💖 | 19 |
-| Symbols | ☮️ ⚛️ ♻️ ✖️ | 78+ |
-
-## 🔒 Safety Features
-
-All scripts include:
-
-1. **Pre-flight Checks** - Verify repository state
-2. **SHA256 Checksums** - File integrity verification
-3. **Manifests** - Complete file listings before/after
-4. **`--allow-empty`** - No file modifications
-5. **Detailed Logging** - Full operation audit trail
-
-## 🤝 Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+- [gitmoji](https://gitmoji.dev) - Emoji guide for commits
+- [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli)
+- [commit-message-emoji](https://github.com/dannyfritz/commit-message-emoji)
 
 ## 📄 License
 
 MIT License - see [LICENSE](LICENSE)
 
-## 🔗 Related Projects
-
-- [gitmoji](https://gitmoji.dev) - An emoji guide for commit messages
-- [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - Interactive gitmoji client
-- [commit-message-emoji](https://github.com/dannyfritz/commit-message-emoji) - Emoji commit guide
-
 ---
 
 <p align="center">
-  <b>Make your terminal beautiful ✨</b>
+  <b>Make your GitHub beautiful ✨</b><br>
+  <a href="https://github.com/nirholas/aesthetics">github.com/nirholas/aesthetics</a>
 </p>
