@@ -126,3 +126,4 @@ echo ""
 echo -e "${CYAN}══════════════════════════════════════════════════════════${NC}"
 echo -e "  ${GRAY}Showing $LIMIT commits${NC}"
 echo ""
+
