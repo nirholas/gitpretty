@@ -306,3 +306,4 @@ sudo apt install fonts-noto-color-emoji
 ---
 
 💡 **Pro Tip:** Start with `emoji-hooks.sh install` in your favorite project. You'll never want to go back to plain commits!
+
