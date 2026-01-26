@@ -4,7 +4,7 @@
 # Each file gets a tiny modification (trailing newline) and committed with unique emoji
 # This makes emojis visible in GitHub's file listing view
 
-set -e
+set +e
 
 REPO_PATH="$1"
 
@@ -128,5 +128,6 @@ echo ""
 echo "Each file now has a unique emoji in GitHub's file browser!"
 echo "Push with: git push origin main"
 echo ""
+
 
 
