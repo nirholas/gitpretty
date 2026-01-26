@@ -169,3 +169,4 @@ case $STYLE in
     week)       format_week ;;
     author)     format_author ;;
 esac
+
