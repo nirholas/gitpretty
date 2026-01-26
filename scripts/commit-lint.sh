@@ -144,3 +144,4 @@ if [[ $FAIL_COUNT -eq 0 ]]; then
     echo -e "${GREEN}✅ All commits follow emoji conventions!${NC}"
 fi
 echo ""
+
