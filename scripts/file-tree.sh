@@ -220,3 +220,4 @@ TOTAL_DIRS=$(find "$DIR" -type d -not -path '*/.git/*' -not -path '*/.git' 2>/de
 echo -e "${GRAY}$TOTAL_DIRS directories, $TOTAL_FILES files${NC}"
 echo ""
 
+
