@@ -148,3 +148,4 @@ git commit -m "🔒 Patch XSS vulnerability"
 - [gitmoji.dev](https://gitmoji.dev) - Official gitmoji guide
 - [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - CLI tool
 - [commit-message-emoji](https://github.com/dannyfritz/commit-message-emoji) - Another guide
+
