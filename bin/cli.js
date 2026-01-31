@@ -72,3 +72,4 @@ if (command === 'beautify') {
   console.error('Run "gitpretty help" for usage');
   process.exit(1);
 }
+
