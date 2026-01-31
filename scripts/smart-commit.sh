@@ -216,3 +216,4 @@ else
     echo ""
     git log -1 --oneline
 fi
+
