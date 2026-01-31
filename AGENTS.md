@@ -59,3 +59,4 @@ echo "test" > file.txt && git add . && git commit -m "init"
 /path/to/gitpretty/emoji-file-commits.sh .
 ```
 
+
