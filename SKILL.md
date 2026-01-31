@@ -43,3 +43,4 @@
 - Requires git 2.0+
 - Emoji display depends on terminal/font support
 
+
