@@ -9,7 +9,7 @@
 ## What does it do?
 
 **Before:** 😴
-```
+``` 
 a1b2c3d Update stuff
 e4f5g6h Fix thing
 i7j8k9l Add feature
