@@ -1,0 +1,13 @@
+{
+    "name": "gitpretty",
+    "description": "\ud83c\udfa8 Add unique emoji commits to every file in a repository",
+    "version": "1.0.0",
+    "publisher": "nirholas",
+    "repository": "https://github.com/nirholas/gitpretty",
+    "language": "Shell",
+    "topics": [
+        "gitpretty",
+        "nirholas",
+        "open-source"
+    ]
+}

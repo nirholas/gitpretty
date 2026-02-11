@@ -1,0 +1,16 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "gitpretty",
+    "name_for_model": "gitpretty",
+    "description_for_human": "\ud83c\udfa8 Add unique emoji commits to every file in a repository",
+    "description_for_model": "\ud83c\udfa8 Add unique emoji commits to every file in a repository",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "none"
+    },
+    "logo_url": "https://github.com/nirholas.png",
+    "contact_email": "nirholas@users.noreply.github.com",
+    "legal_info_url": "https://github.com/nirholas/gitpretty/blob/main/LICENSE"
+}

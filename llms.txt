@@ -29,4 +29,8 @@ git clone https://github.com/nirholas/gitpretty.git
 - Repo: https://github.com/nirholas/gitpretty
 - Docs: docs/tutorials/SETUP.md
 
+## Links
 
+- Repository: https://github.com/nirholas/gitpretty
+- Author: https://github.com/nirholas
+- Full documentation: https://raw.githubusercontent.com/nirholas/gitpretty/main/llms-full.txt

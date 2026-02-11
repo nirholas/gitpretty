@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use gitpretty, please cite it as below."
+type: software
+title: "gitpretty"
+abstract: "🎨 Add unique emoji commits to every file in a repository"
+authors:
+  - alias: nirholas
+    name: nirholas
+repository-code: "https://github.com/nirholas/gitpretty"
+url: "https://github.com/nirholas/gitpretty"
+license: MIT
+version: "1.0.0"
+date-released: "2026-02-11"
+keywords:
+  - open-source
+  - nirholas
