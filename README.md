@@ -213,3 +213,7 @@ MIT
   <b>git pretty</b> ✨ make your commits beautiful
 </p>
 
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=nirholas/gitpretty&type=Date)](https://star-history.com/#nirholas/gitpretty&Date)
