@@ -3,7 +3,6 @@
 > Make your git history beautiful with emojis and smart commits
 
 [![npm](https://img.shields.io/badge/npm-gitpretty-red.svg)](https://npmjs.com/package/gitpretty)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ## What does it do?
@@ -212,7 +211,6 @@ MIT
 <p align="center">
   <b>git pretty</b> ✨ make your commits beautiful
 </p>
-
 
 ## Star History
 
