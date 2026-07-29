@@ -2,7 +2,7 @@
   "name": "gitglow",
   "version": "1.0.0",
   "description": "Make your git history beautiful - emoji commits, pretty logs, and aesthetic workflows",
-  "main": "index.js",
+  "main": "./bin/cli.js",
   "bin": {
     "gitpretty": "./bin/cli.js"
   },

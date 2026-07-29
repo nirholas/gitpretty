@@ -2,7 +2,7 @@
 
 > Make your git history beautiful with emojis and smart commits
 
-[![npm](https://img.shields.io/badge/npm-gitpretty-red.svg)](https://npmjs.com/package/gitpretty)
+[![npm](https://img.shields.io/badge/npm-gitglow-red.svg)](https://npmjs.com/package/gitglow)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ## What does it do?
@@ -25,6 +25,16 @@ i7j8k9l 📝 docs: update API documentation
 
 ## 🚀 Installation
 
+### From npm (published as `gitglow`)
+
+```bash
+npm install -g gitglow
+```
+
+This installs the `gitpretty` command globally.
+
+### From source
+
 ```bash
 # Clone to your home directory (recommended)
 git clone https://github.com/nirholas/gitpretty.git ~/.gitpretty
@@ -32,6 +42,9 @@ git clone https://github.com/nirholas/gitpretty.git ~/.gitpretty
 # Or clone anywhere you like
 git clone https://github.com/nirholas/gitpretty.git /path/to/gitpretty
 ```
+
+The shell scripts under `scripts/` are executable and can be run directly from
+the clone — no build step is required.
 
 ---
 

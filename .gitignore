@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# npm packaging output
+*.tgz
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editors / OS
+.idea/
+.vscode/sessions.json
+.DS_Store
+Thumbs.db
+*.swp
+
+# Environment files
+.env
+.env.local
+.env.*.local
