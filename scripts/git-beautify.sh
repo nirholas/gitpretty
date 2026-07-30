@@ -75,14 +75,14 @@ get_emoji() {
         *"remove"*|*"delete"*) echo "🔥 " ;;
         *"doc"*|*"readme"*) echo "📝 " ;;
         *"deploy"*|*"release"*) echo "🚀 " ;;
-        *"style"*|*"css"*|*"ui"*) echo "💄 " ;;
+        *"style"*|*"css"*|*"ui "*|*" ui"*|*"ui:"*) echo "💄 " ;;
         *"refactor"*|*"clean"*) echo "♻️  " ;;
         *"config"*|*"setting"*) echo "🔧 " ;;
         *"test"*) echo "✅ " ;;
         *"security"*|*"auth"*) echo "🔒 " ;;
+        *"build"*|*"package"*) echo "📦 " ;;
         *"upgrade"*|*"update"*|*"bump"*) echo "⬆️  " ;;
         *"downgrade"*) echo "⬇️  " ;;
-        *"build"*|*"package"*) echo "📦 " ;;
         *"merge"*) echo "🔀 " ;;
         *"wip"*|*"progress"*) echo "🚧 " ;;
         *"hotfix"*|*"critical"*) echo "🚑 " ;;

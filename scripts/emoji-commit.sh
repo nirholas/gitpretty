@@ -117,7 +117,7 @@ suggest_emoji() {
         *"improve"*|*"enhance"*|*"optimize"*) echo "⚡" ;;
         *"wip"*|*"progress"*) echo "🚧" ;;
         *"api"*|*"endpoint"*) echo "🔌" ;;
-        *"ui"*|*"interface"*|*"layout"*) echo "🎨" ;;
+        *"ui "*|*" ui"*|*"ui:"*|*"interface"*|*"layout"*) echo "🎨" ;;
         *"database"*|*"db"*|*"schema"*) echo "🗃️" ;;
         *"package"*|*"depend"*|*"bump"*) echo "📦" ;;
         *) echo "✨" ;;  # Default to sparkles
