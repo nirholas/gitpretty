@@ -301,7 +301,7 @@ sudo apt install fonts-noto-color-emoji
 
 - [GitHub Actions Guide](GITHUB_ACTIONS.md) - Automate emojis in CI/CD
 - [Scenarios & Examples](SCENARIOS.md) - Real-world use cases
-- [Contributing](../CONTRIBUTING.md) - Help improve the tools
+- [Contributing](../../CONTRIBUTING.md) - Help improve the tools
 
 ---
 

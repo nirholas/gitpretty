@@ -35,6 +35,7 @@ Commands:
   merge <branch>      Merge with emoji message
   tag <version> <type> Create release tag (major|minor|patch)
   hooks <action>      Git hooks (install|uninstall|status)
+  version             Print the installed gitpretty version
 
 Examples:
   gitpretty beautify .
@@ -48,6 +49,12 @@ More info: https://github.com/nirholas/gitpretty
 
 if (command === 'help' || command === '--help' || command === '-h') {
   showHelp();
+  process.exit(0);
+}
+
+if (command === 'version' || command === '--version' || command === '-v') {
+  const { version } = require(path.join(rootDir, 'package.json'));
+  console.log(`gitpretty ${version}`);
   process.exit(0);
 }
 

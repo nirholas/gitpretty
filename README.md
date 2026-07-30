@@ -217,7 +217,7 @@ git st list                       # Pretty stash list
 
 ## 📄 License
 
-MIT
+Proprietary. All rights reserved. See [LICENSE](LICENSE) for the terms; use requires written permission from the copyright owner.
 
 ---
 
