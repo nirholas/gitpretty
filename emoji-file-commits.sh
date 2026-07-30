@@ -86,7 +86,17 @@ echo ""
 
 # Get all tracked files
 FILES=$(git ls-files)
-FILE_COUNT=$(echo "$FILES" | wc -l)
+
+# An empty $FILES is still one (empty) line to wc, which used to report
+# "Files to process: 1" and then "SUCCESS! 0 emoji commits created" in a
+# repository with nothing tracked yet.
+if [ -z "$FILES" ]; then
+    echo "❌ No tracked files found in $(pwd)."
+    echo "   Stage and commit your files first, e.g. git add -A && git commit -m 'init'."
+    exit 1
+fi
+
+FILE_COUNT=$(printf '%s\n' "$FILES" | wc -l)
 
 echo "📁 Files to process: $FILE_COUNT"
 echo ""
