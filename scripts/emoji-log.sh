@@ -68,8 +68,11 @@ while [[ $# -gt 0 ]]; do
 done
 
 format_compact() {
-    git log $LIMIT $ALL --pretty=format:"%C(yellow)%h%C(reset) %s %C(dim)(%cr)%C(reset) %C(blue)<%an>%C(reset)" | 
-    while IFS= read -r line; do
+    git log $LIMIT $ALL --pretty=format:"%C(yellow)%h%C(reset) %s %C(dim)(%cr)%C(reset) %C(blue)<%an>%C(reset)" |
+    # --pretty=format: omits the trailing newline, so the final commit arrives
+    # without one. Without the || test below, read drops it and a single-commit
+    # repository prints nothing at all.
+    while IFS= read -r line || [[ -n "$line" ]]; do
         # Add decorative prefix if commit doesn't start with emoji
         if [[ ! "$line" =~ ^[a-f0-9]+[[:space:]][[:punct:]]|^[a-f0-9]+[[:space:]]🔹 ]]; then
             echo "$line" | sed 's/^\([a-f0-9]*\) /\1 🔹 /'

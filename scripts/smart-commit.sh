@@ -148,15 +148,15 @@ if [[ -z "$SCOPE" ]]; then
     fi
 fi
 
+# Capitalize the first letter of the description
+DESCRIPTION="$(echo "${DESCRIPTION:0:1}" | tr '[:lower:]' '[:upper:]')${DESCRIPTION:1}"
+
 # Build the commit message header
 if [[ -n "$SCOPE" ]]; then
     HEADER="$EMOJI $TYPE($SCOPE): $DESCRIPTION"
 else
     HEADER="$EMOJI $TYPE: $DESCRIPTION"
 fi
-
-# Capitalize first letter of description
-HEADER="${HEADER:0:$((${#EMOJI}+${#TYPE}+${#SCOPE}+4))}$(echo "${DESCRIPTION:0:1}" | tr '[:lower:]' '[:upper:]')${DESCRIPTION:1}"
 
 # Generate body
 BODY=""

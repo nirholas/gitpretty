@@ -214,8 +214,15 @@ git diff --cached --name-only | while read -r file; do
 done
 echo ""
 
-read -p "Commit with this message? [Y/n/e(dit)] " -n 1 -r
-echo
+# The prompt defaults to yes, so when there is no terminal to answer it (a
+# pipeline, a CI job, the gitpretty CLI reading from a script) take the default
+# instead of failing on EOF, which used to abort the commit with exit 1.
+if [ -t 0 ]; then
+    read -p "Commit with this message? [Y/n/e(dit)] " -n 1 -r
+    echo
+else
+    REPLY=""
+fi
 
 case $REPLY in
     [Nn])

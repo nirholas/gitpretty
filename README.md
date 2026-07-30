@@ -58,6 +58,8 @@ Stage your changes and commit with a simple description:
 # Stage all files and commit
 git add -A && ~/.gitpretty/scripts/emoji-commit.sh "add user dashboard"
 # Result: ✨ Add user dashboard
+# It previews the message and asks for confirmation first (default yes).
+# With no terminal attached it takes the default and commits.
 
 # Stage specific files and commit
 git add src/auth.ts && ~/.gitpretty/scripts/emoji-commit.sh "fix login bug"
@@ -79,17 +81,20 @@ The script automatically detects the commit type from your message:
 For more descriptive, conventional commit messages:
 
 ```bash
-# Basic: type + description
+# Basic: type + description. The scope is inferred from the staged paths.
 git add -A && ~/.gitpretty/scripts/smart-commit.sh feat "add user authentication"
-# Result: ✨ feat: add user authentication
+# Result: ✨ feat(src): Add user authentication
 
 # With scope: type + scope + description
 git add -A && ~/.gitpretty/scripts/smart-commit.sh feat auth "add OAuth2 login"
-# Result: ✨ feat(auth): add OAuth2 login
+# Result: ✨ feat(auth): Add OAuth2 login
 
 # Preview without committing (dry-run)
 ~/.gitpretty/scripts/smart-commit.sh -d feat "add new feature"
 ```
+
+The description is capitalized automatically, and the commit body lists the
+staged files and a change summary.
 
 **Commit types:**
 | Type | Emoji | Use for |
