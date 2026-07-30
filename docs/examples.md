@@ -1,48 +1,34 @@
-# ✨ gitpretty
+# gitpretty examples
 
-> Make your git history beautiful with emojis and smart commits
+Make your git history beautiful - emoji commits, pretty logs, and aesthetic workflows
 
-[![npm](https://img.shields.io/badge/npm-gitglow-red.svg)](https://npmjs.com/package/gitglow)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+## Example 1
 
-## What does it do?
-
-**Before:** 😴
-``` 
-a1b2c3d Update stuff
-e4f5g6h Fix thing
-i7j8k9l Add feature
-```
-
+```text
 **After:** ✨
 ```
-a1b2c3d ✨ feat(auth): add user authentication
-e4f5g6h 🐛 fix(login): resolve validation error on mobile  
-i7j8k9l 📝 docs: update API documentation
-```
 
+## Example 2
+
+```text
 ---
 
 ## 🚀 Installation
 
 ### From npm (published as `gitglow`)
-
-```bash
-npm install -g gitglow
 ```
 
+## Example 3
+
+```text
 This installs the `gitpretty` command globally.
 
 ### From source
-
-```bash
-# Clone to your home directory (recommended)
-git clone https://github.com/nirholas/gitpretty.git ~/.gitpretty
-
-# Or clone anywhere you like
-git clone https://github.com/nirholas/gitpretty.git /path/to/gitpretty
 ```
 
+## Example 4
+
+```text
 The shell scripts under `scripts/` are executable and can be run directly from
 the clone — no build step is required.
 
@@ -53,19 +39,11 @@ the clone — no build step is required.
 ### Quick Commit (Most Common)
 
 Stage your changes and commit with a simple description:
-
-```bash
-# Stage all files and commit
-git add -A && ~/.gitpretty/scripts/emoji-commit.sh "add user dashboard"
-# Result: ✨ Add user dashboard
-# It previews the message and asks for confirmation first (default yes).
-# With no terminal attached it takes the default and commits.
-
-# Stage specific files and commit
-git add src/auth.ts && ~/.gitpretty/scripts/emoji-commit.sh "fix login bug"
-# Result: 🐛 Fix login bug
 ```
 
+## Example 5
+
+```text
 The script automatically detects the commit type from your message:
 
 | Your message | Becomes |
@@ -79,20 +57,11 @@ The script automatically detects the commit type from your message:
 ### Smart Commit (Detailed Messages)
 
 For more descriptive, conventional commit messages:
-
-```bash
-# Basic: type + description. The scope is inferred from the staged paths.
-git add -A && ~/.gitpretty/scripts/smart-commit.sh feat "add user authentication"
-# Result: ✨ feat(src): Add user authentication
-
-# With scope: type + scope + description
-git add -A && ~/.gitpretty/scripts/smart-commit.sh feat auth "add OAuth2 login"
-# Result: ✨ feat(auth): Add OAuth2 login
-
-# Preview without committing (dry-run)
-~/.gitpretty/scripts/smart-commit.sh -d feat "add new feature"
 ```
 
+## Example 6
+
+```text
 The description is capitalized automatically, and the commit body lists the
 staged files and a change summary.
 
@@ -167,76 +136,23 @@ staged files and a change summary.
 ## 🪝 Auto-Emoji Hooks
 
 Install once, and every commit automatically gets emojis:
-
-```bash
-# Install hooks in your repo
-cd /path/to/your-repo
-~/.gitpretty/scripts/emoji-hooks.sh install
-
-# Now every commit gets auto-emoji!
-git commit -m "add feature"
-# 🪝 Auto-added: ✨
-# ✨ Add feature
 ```
 
+## Example 7
+
+```text
 ---
 
 ## ⚙️ Git Aliases (Optional)
 
 Add to your `~/.gitconfig` for shorter commands:
-
-```ini
-[alias]
-    # Quick emoji commit
-    c = "!f() { git add -A && ~/.gitpretty/scripts/emoji-commit.sh \"$1\"; }; f"
-    
-    # Smart commit with type
-    sc = "!f() { git add -A && ~/.gitpretty/scripts/smart-commit.sh \"$@\"; }; f"
-    
-    # Pretty log
-    lg = "!~/.gitpretty/scripts/emoji-log.sh"
-    
-    # Pretty stash
-    st = "!~/.gitpretty/scripts/emoji-stash.sh"
 ```
 
+## Example 8
+
+```text
 Then use:
-
-```bash
-git c "add new feature"           # Quick commit
-git sc feat auth "add OAuth"      # Smart commit with scope
-git lg graph                      # Pretty log graph
-git st list                       # Pretty stash list
 ```
 
----
 
-## 📚 More Documentation
-
-- [Setup Guide](docs/tutorials/SETUP.md)
-- [GitHub Actions](docs/tutorials/GITHUB_ACTIONS.md)
-- [Scenarios](docs/tutorials/SCENARIOS.md)
-- [Emoji Guide](docs/EMOJI_GUIDE.md)
-
----
-
-## 📄 License
-
-Proprietary. All rights reserved. See [LICENSE](LICENSE) for the terms; use requires written permission from the copyright owner.
-
----
-
-<p align="center">
-  <b>git pretty</b> ✨ make your commits beautiful
-</p>
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=nirholas/gitpretty&type=Date)](https://star-history.com/#nirholas/gitpretty&Date)
-
-## Documentation
-
-Full documentation site: **https://nirholas.github.io/gitpretty/**
-
-- [Getting started](docs/getting-started.md) covers install and first run.
-- [Examples](docs/examples.md) has copy-paste snippets.
+Every snippet above is taken from the [repository documentation](https://github.com/nirholas/gitpretty#readme).
