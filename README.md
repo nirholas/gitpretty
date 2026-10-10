@@ -240,3 +240,26 @@ Full documentation site: **https://nirholas.github.io/gitpretty/**
 
 - [Getting started](docs/getting-started.md) covers install and first run.
 - [Examples](docs/examples.md) has copy-paste snippets.
+
+<!-- three.ws:growth -->
+## Support the project
+
+If gitpretty saves you time, **[star it on GitHub](https://github.com/nirholas/gitpretty)**. Stars are how other developers and AI agents find the repositories worth trusting, and they cost you one click.
+
+Know someone who would use it? [Post on X](https://twitter.com/intent/tweet?text=gitpretty%3A%20%F0%9F%8E%A8%20Add%20unique%20emoji%20commits%20to%20every%20file%20in%20a%20repository&url=https%3A%2F%2Fgithub.com%2Fnirholas%2Fgitpretty) · [Share on Bluesky](https://bsky.app/intent/compose?text=gitpretty%3A%20%F0%9F%8E%A8%20Add%20unique%20emoji%20commits%20to%20every%20file%20in%20a%20repository%20https%3A%2F%2Fgithub.com%2Fnirholas%2Fgitpretty) · [Share on LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgithub.com%2Fnirholas%2Fgitpretty) · [Submit to Hacker News](https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fgithub.com%2Fnirholas%2Fgitpretty&t=gitpretty%3A%20%F0%9F%8E%A8%20Add%20unique%20emoji%20commits%20to%20every%20file%20in%20a%20repository) · [Share on Reddit](https://www.reddit.com/submit?url=https%3A%2F%2Fgithub.com%2Fnirholas%2Fgitpretty&title=gitpretty%3A%20%F0%9F%8E%A8%20Add%20unique%20emoji%20commits%20to%20every%20file%20in%20a%20repository)
+
+## Built for AI agents too
+
+Coding agents and LLM tooling can read this repo directly: [AGENTS.md](./AGENTS.md), [llms.txt](./llms.txt), [llms-full.txt](./llms-full.txt). Point an agent at `https://github.com/nirholas/gitpretty` and it has the context it needs.
+
+## More from the same author
+
+- [All repositories by nirholas](https://github.com/nirholas/nirholas#readme): the full catalog, grouped by topic
+- [three.ws](https://three.ws): the platform for 3D AI agents with Solana wallets, a skill marketplace and x402 payments
+- Questions or ideas: [open an issue](https://github.com/nirholas/gitpretty/issues) or [start a discussion](https://github.com/nirholas/gitpretty/discussions)
+
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=nirholas/gitpretty)](https://github.com/nirholas/gitpretty/graphs/contributors)
+
+<!-- /three.ws:growth -->
