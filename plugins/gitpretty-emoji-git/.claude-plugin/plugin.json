@@ -1,0 +1,18 @@
+{
+  "name": "gitpretty-emoji-git",
+  "version": "1.0.0",
+  "description": "Emoji git workflow CLI: smart emoji commits, pretty logs, branches, tags, hooks and per-file emoji history.",
+  "author": {
+    "name": "nirholas"
+  },
+  "repository": "https://github.com/nirholas/gitpretty",
+  "homepage": "https://github.com/nirholas/gitpretty",
+  "keywords": [
+    "git",
+    "emoji",
+    "commits",
+    "gitmoji",
+    "conventional-commits",
+    "developer-tools"
+  ]
+}
